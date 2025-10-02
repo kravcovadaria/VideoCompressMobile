@@ -122,7 +122,7 @@ extension Compress on IVideoCompress {
   /// ```
   Future<MediaInfo?> compressVideo(
     String path,
-    String targetFolder, {
+    String targetPath, {
     VideoQuality quality = VideoQuality.DefaultQuality,
     bool deleteOrigin = false,
     int? startTime,
@@ -145,7 +145,7 @@ extension Compress on IVideoCompress {
     setProcessingStatus(true);
     final jsonStr = await _invoke<String>('compressVideo', {
       'path': path,
-      'targetFolder': targetFolder,
+      'targetPath': targetPath,
       'quality': quality.index,
       'deleteOrigin': deleteOrigin,
       'startTime': startTime,
